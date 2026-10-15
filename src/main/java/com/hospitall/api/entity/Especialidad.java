@@ -1,0 +1,51 @@
+package com.hospitall.api.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "especialidades")
+public class Especialidad {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_especialidad")
+    private Integer idEspecialidad;
+
+    @Column(name = "nombre", nullable = false, unique = true)
+    private String nombre;
+
+    @Column(name = "descripcion")
+    private String descripcion;
+
+    public Especialidad() {
+    }
+
+    public Especialidad(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
+    public Integer getIdEspecialidad() {
+        return idEspecialidad;
+    }
+
+    public void setIdEspecialidad(Integer idEspecialidad) {
+        this.idEspecialidad = idEspecialidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+}
